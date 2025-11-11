@@ -9,12 +9,6 @@ One function per operation, in order.
 #Partner1: Cheuvront,Cason Makail
 #Partner2:Song Wenxi
 import math
-def square_root(a):
-    if a<0:
-        raise ValueError
-    return math.sqrt(a)
-def hypotenuse(a, b):
-    return math.hypot(a,b)
 def add(a, b):
     return a + b
 def sub(a, b):
