@@ -1,5 +1,6 @@
 import unittest
 import calculator
+import math
 #https://github.com/Susieruby/lab10-CC-SW
 #Partner1: Cheuvront Cason Makail
 #Partner2:Song Wenxi
@@ -36,6 +37,41 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculator.square_root(2), 1.41421356)
         with self.assertRaises(ValueError):
             calculator.square_root(-9)
+
+    def test_add(self):
+        self.assertEqual(calculator.add(5, 3), 8)
+        self.assertEqual(calculator.add(-2, 4), 2)
+        self.assertEqual(calculator.add(0, 0), 0)
+        self.assertEqual(calculator.add(1.5, 2.5), 4.0)
+
+    def test_subtract(self):
+        self.assertEqual(calculator.sub(10, 4), 6)
+        self.assertEqual(calculator.sub(-3, -5), 2)
+        self.assertEqual(calculator.sub(7, 0), 7)
+        self.assertAlmostEqual(calculator.sub(4.2, 1.1), 3.1)
+
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            calculator.div(0, 5)
+        with self.assertRaises(ZeroDivisionError):
+            calculator.div(0, -3)
+        with self.assertRaises(ZeroDivisionError):
+            calculator.div(0, 0.0)
+
+    def test_logarithm(self):
+        self.assertAlmostEqual(calculator.log(2, 8), 3.0)
+        self.assertAlmostEqual(calculator.log(10, 1000), 3.0)
+        self.assertAlmostEqual(calculator.log(math.e, math.e ** 5), 5.0)
+
+    def test_log_invalid_base(self):
+        # Base <= 0
+        with self.assertRaises(ValueError):
+            calculator.log(-2, 10)
+        with self.assertRaises(ValueError):
+            calculator.log(0, 5)
+        # Base == 1
+        with self.assertRaises(ValueError):
+            calculator.log(1, 20)
 
 
 if __name__ == "__main__":
