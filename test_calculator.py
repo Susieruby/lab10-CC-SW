@@ -1,9 +1,9 @@
-import unittest
-import calculator
-import math
 #https://github.com/Susieruby/lab10-CC-SW
 #Partner1: Cheuvront Cason Makail
 #Partner2:Song Wenxi
+import unittest
+import calculator
+import math
 
 class TestCalculator(unittest.TestCase):
     # ---------------------- Partner 1  ----------------------
@@ -14,10 +14,10 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculator.add(1.5, 2.5), 4.0)
 
     def test_subtract(self):
-        self.assertEqual(calculator.sub(10, 4), 6)
-        self.assertEqual(calculator.sub(-3, -5), 2)
-        self.assertEqual(calculator.sub(7, 0), 7)
-        self.assertAlmostEqual(calculator.sub(4.2, 1.1), 3.1)
+        self.assertEqual(calculator.subtract(10, 4), 6)
+        self.assertEqual(calculator.subtract(-3, -5), 2)
+        self.assertEqual(calculator.subtract(7, 0), 7)
+        self.assertAlmostEqual(calculator.subtract(4.2, 1.1), 3.1)
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
@@ -28,17 +28,17 @@ class TestCalculator(unittest.TestCase):
             calculator.div(0, 0.0)
 
     def test_logarithm(self):
-        self.assertAlmostEqual(calculator.log(2, 8), 3.0)
-        self.assertAlmostEqual(calculator.log(10, 1000), 3.0)
-        self.assertAlmostEqual(calculator.log(math.e, math.e ** 5), 5.0)
+        self.assertAlmostEqual(calculator.logarithm(2, 8), 3.0)
+        self.assertAlmostEqual(calculator.logarithm(10, 1000), 3.0)
+        self.assertAlmostEqual(calculator.logarithm(math.e, math.e ** 5), 5.0)
 
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            calculator.log(-2, 10)
+            calculator.logarithm(-2, 10)
         with self.assertRaises(ValueError):
-            calculator.log(0, 5)
+            calculator.logarithm(0, 5)
         with self.assertRaises(ValueError):
-            calculator.log(1, 20)
+            calculator.logarithm(1, 20)
 
     # ---------------------- Partner 2 ----------------------
     def test_multiply(self):
