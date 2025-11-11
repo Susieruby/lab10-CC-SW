@@ -1,7 +1,7 @@
 import unittest
 import calculator
 #https://github.com/Susieruby/lab10-CC-SW
-#Partner1: Cheuvront,Cason Makail
+#Partner1: Cheuvront Cason Makail
 #Partner2:Song Wenxi
 
 class TestCalculator(unittest.TestCase):
