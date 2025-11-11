@@ -33,12 +33,10 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculator.log(math.e, math.e ** 5), 5.0)
 
     def test_log_invalid_base(self):
-        # 底数 ≤ 0
         with self.assertRaises(ValueError):
             calculator.log(-2, 10)
         with self.assertRaises(ValueError):
             calculator.log(0, 5)
-        # 底数 = 1
         with self.assertRaises(ValueError):
             calculator.log(1, 20)
 
@@ -55,7 +53,6 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculator.div(3, 6.0), 2.0)
 
     def test_log_invalid_argument(self):
-        # 真数 ≤ 0（无论底数是否有效）
         with self.assertRaises(ValueError):
             calculator.log(2, -5)
         with self.assertRaises(ValueError):
